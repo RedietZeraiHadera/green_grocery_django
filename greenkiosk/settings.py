@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     "salesperson",
     "payment_management",
     "order_management",
+    "Shipment_management",
+    "Ratings",
+    "Cartmanager",
 ]
 
 MIDDLEWARE = [
