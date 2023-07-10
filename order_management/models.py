@@ -1,8 +1,10 @@
 from django.db import models
+from payment_management.models import Payment
 
 # Create your models here.
 
 class Order(models.Model):
+    payment = models.OneToOneField(Payment, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=32)
     payment_method = models.CharField(max_length=50)
     delivery_method = models.CharField(max_length=50,default="standard shipping")
