@@ -1,9 +1,15 @@
 from django.db import models
 from payment_management.models import Payment
+from customer_management.models import Customer
+from Cartmanager.models import Cart
+from Shipment_management.models import Shipment
 
 # Create your models here.
 
 class Order(models.Model):
+    shipment = models.ManyToManyField(Shipment')
+    cart = models.OneToOneField(Cart,on_delete=models.CASCADE)
+    customer = models.ForeignKey(Customer,on_delete=models.CASCADE)
     payment = models.OneToOneField(Payment, on_delete=models.CASCADE, null=True)
     name = models.CharField(max_length=32)
     payment_method = models.CharField(max_length=50)
