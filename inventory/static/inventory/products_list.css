@@ -1,0 +1,39 @@
+/* Apply basic styling to the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #6B6B6B; /* Darker gray border color */
+    color: #4A4A4A; /* Dark gray text color */
+  }
+  /* Style table headers */
+  th {
+    background-color: #FF8C8C; /* Light coral header background color */
+    padding: 12px; /* Slightly increased padding */
+    border: 1px solid #E48A8A; /* Lighter border color for headers */
+    text-align: left;
+    font-weight: bold; /* Bold font for headers */
+  }
+  /* Style table data cells */
+  td {
+    padding: 10px; /* Slightly increased padding */
+    border: 1px solid #A2A2A2; /* Light gray border color */
+  }
+  /* Style the link in the last column */
+  td a {
+    display: inline-block; /* Changed to inline-block to reduce space */
+    padding: 6px 12px; /* Padding for the link */
+    text-align: center;
+    text-decoration: none;
+    color: #0088FF; /* Dark blue link color */
+    border-radius: 4px; /* Rounded corners for the link */
+    background-color: #E6E6E6; /* Light gray background for the link */
+    transition: background-color 0.2s ease; /* Smooth hover effect transition */
+  }
+  /* Apply hover effect to the link */
+  td a:hover {
+    background-color: #D4D4D4; /* Slightly darker background on hover */
+  }
+  /* Apply alternate row color */
+  tr:nth-child(even) {
+    background-color: #D8C1C1; /* Lighter alternate row color */
+  }

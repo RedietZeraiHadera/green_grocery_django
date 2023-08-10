@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'inventory/products_list.css' %}">
+    <title>Document</title>
+</head>
+<body>
+<table>
+        <tr>
+            <th>product</th>
+            <th>total</th>
+            <th>number_of_products</th>
+            <th>payment_options</th>
+            <th>cart details</th>
+            <th>Edit cart</th>
+           
+
+        </tr>
+    <tbody>
+        {% for cart in carts %}
+        <tr>
+            <td>{{cart.product}}</td>
+            <td>{{cart.total}}</td>
+            <td>{{cart.number_of_products}}</td>
+            <td>{{cart.payment_options}}</td>
+
+
+            <td><a href="{% url 'cart_detail_view' id=cart.id %}">View cart</a></td>
+            <td><a href = "{% url 'cart_edit_view' id=cart.id %}">Edit cart</a></td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
+
+
+
+
+
+
