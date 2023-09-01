@@ -4,35 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% load static %}
-    <link rel="stylesheet" href="{% static 'inventory/products_list.css' %}">
     <title>Document</title>
 </head>
 <body>
-<table>
+    <table style="border-collapse: collapse; width: 100%;">
         <tr>
-            <th>name</th>
-            <th>email</th>
-            <th>contacts</th>
-            <th>location</th>
-            <th>Customer details</th>
-            <th>Edit customer</th>
-
+          <th style="border: 1px solid black; padding: 10px; text-align: center; background-color: #d9d9d9;">name</th>
+          <th style="border: 1px solid black; padding: 10px; text-align: center; background-color: #d9d9d9;">email</th>
+          <th style="border: 1px solid black; padding: 10px; text-align: center; background-color: #d9d9d9;">contacts</th>
+          <th style="border: 1px solid black; padding: 10px; text-align: center; background-color: #d9d9d9;">location</th>
+          <th style="border: 1px solid black; padding: 10px; text-align: center;">Customer details</th>
+          <th style="border: 1px solid black; padding: 10px; text-align: center;">Edit customer</th>
         </tr>
-    <tbody>
-        {% for customer in customers %}
-        <tr>
-            <td>{{customer.name}}</td>
-            <td>{{customer.email}}</td>
-            <td>{{customer.contacts}}</td>
-            <td>{{customer.location}}</td>
-
-            <td><a href = "{% url 'customer_detail_view' id=customer.id %}">View customer</a></td>
-            <td><a href = "{% url 'customer_edit_view' id=customer.id %}">Edit customer details</a></td>
-       
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+        <tbody>
+          {% for customer in customers %}
+            <tr>
+                <td style="border: 1px solid black;">{{customer.name}}</td>
+                <td style="border: 1px solid black;">{{customer.email}}</td>
+                <td style="border: 1px solid black;">{{customer.contacts}}</td>
+                <td style="border: 1px solid black;">{{customer.location}}</td>
+              <td style="border: 1px solid black;"><a href = "{% url 'customer_detail_view' id=customer.id %}">View customer</a></td>
+              <td style="border: 1px solid black;"><a href = "{% url 'customer_edit_view' id=customer.id %}">Edit customer details</a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
 </body>
 </html>
 

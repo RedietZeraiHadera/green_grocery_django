@@ -10,7 +10,7 @@ def vendor_upload_form(request):
         form = VendorUPloadForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect("customer_list")  # Redirect to the customer list view after successful form submission
+            return redirect("customer_list") 
     else:
         form = VendorUPloadForm()
     return render(request, "vendor/vendor_upload.html", {"form": form})
@@ -30,7 +30,7 @@ def edit_vendor_view(request, id):
         form = VendorUPloadForm(request.POST, request.FILES, instance=vendors)
         if form.is_valid():
             form.save()
-            return redirect("vendor_detail_view", id=id)  # Redirect to customer detail view after saving
+            return redirect("vendor_detail_view", id=id)  
     else:
         form = VendorUPloadForm(instance=vendors)
     return render(request, 'vendor/edit_vendor.html', {"form": form})

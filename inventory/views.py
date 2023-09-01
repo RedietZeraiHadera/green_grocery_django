@@ -2,9 +2,8 @@ from django.shortcuts import render
 from .forms import ProductUploadForm
 from inventory.models import Product
 from django.shortcuts import redirect
-#there are class based views and function based views
 # Create your views here.
-def upload_product(request):                      #the request represents a http request
+def upload_product(request):                    
     if request.method == 'POST':
         uploaded_product = request.FILES["image"]
         form = ProductUploadForm(request.POST, request.files)

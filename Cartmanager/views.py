@@ -8,7 +8,7 @@ def cart_upload_form(request):
         form = CartUPloadForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect("cart_list")  # Redirect to the customer list view after successful form submission
+            return redirect("cart_list")  
     else:
         form = CartUPloadForm()
     return render(request, "cart/cart_upload.html", {"form": form})
@@ -31,7 +31,7 @@ def edit_cart_view(request, id):
         form = CartUPloadForm(request.POST, request.FILES, instance=cart)
         if form.is_valid():
             form.save()
-            return redirect("cart_detail_view", id=id)  # Redirect to customer detail view after saving
+            return redirect("cart_detail_view", id=id)  
     else:
         form = CartUPloadForm(instance=cart)
     return render(request, 'cart/edit_cart.html', {"form": form})
